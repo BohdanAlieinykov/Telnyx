@@ -43,7 +43,7 @@ describe('Telnyx e2e test', () => {
     cy.get('#LastName').type('Pirojkov')
     cy.get('#Email').type('artyrchik@mail.com')
     cy.get('[type="submit"]').click()
-    cy.get('h1 span').should('contain.value','You\'re on the waitlist!')
+    cy.get('h1 span').should('contain','You\'re on the waitlist!')
   })
 
   it('error message appears when user try to login with non-confirmed email', () => {
