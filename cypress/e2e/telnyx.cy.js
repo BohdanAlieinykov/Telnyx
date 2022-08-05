@@ -52,7 +52,7 @@ describe('Telnyx e2e test', () => {
     cy.get('.eSxLXo > .InlineForm__Container-cLNSZJ > .TextField__Container-gjOtap > .TextField__InputWrapper-hGJUmT > .ui-reactv2-input').type('ejuki038@gmail.com')
     cy.get('[type="password"]').type('PaSwOrD12-34')
     cy.get('.Button__StyledDefaultButton-sc-44gl5i-0').click()
-    cy.wait(2000)
+    cy.wait(4000)
     cy.get('.Message__MessageCopy-sc-1lbs5ge-2').should('be.visible')
   })
 
