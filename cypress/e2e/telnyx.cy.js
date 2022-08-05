@@ -40,10 +40,10 @@ describe('Telnyx e2e test', () => {
     cy.url().should('contain','storage#form')
     cy.wait(8000)
     cy.get('#FirstName.mktoField').type('Artyre')
-    cy.get('#LastName.mktoField ').type('Pirojkov')
-    cy.get('#Email.mktoField ').type('artyrchik@mail.com')
+    cy.get('#LastName.mktoField').type('Pirojkov')
+    cy.get('#Email.mktoField').type('artyrchik@mail.com')
     cy.get('[type="submit"].mktoButton').click({force:true})
-    cy.get('h1 span').should('contain','You\'re on the waitlist!')
+    cy.get('h1 span').should('contain','on the waitlist!')
   })
 
   it('error message appears when user try to login with non-confirmed email', () => {
