@@ -1,20 +1,23 @@
-name: run Cypress tests
-on: 
+name: Cypress Tests
+on:
   push:
-    branches:
-      - 'main'
-  workflow_dispatch:
-
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 jobs:
-  checkout-and-test:
+  test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-
-      - name: Check out repository code
-        uses: actions/checkout@v2
-
-      - name: run cypress tests with chrome
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+    - name: Install dependencies
+      run: npm ci
+    - name: run cypress tests with chrome
         uses: cypress-io/github-action@v2
-        timeout-minutes: 10
-        with:
-          browser: chrome
+    - uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        browser: chrome
