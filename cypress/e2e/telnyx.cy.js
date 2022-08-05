@@ -36,7 +36,7 @@ describe('Telnyx e2e test', () => {
   it('User can join to storage waitlist', () => {
     cy.get(':nth-child(1) > .sc-7b3980dc-6 > span').click({force:true})
     cy.get('.sc-f97529d6-0.bjUuRN.sc-b74bae4-0[href="/products/storage"]').click({force:true})
-    cy.get('.sc-a7a16c36-9 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click()
+    cy.get('.sc-a7a16c36-9 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click({force:true})
     cy.url().should('contain','storage#form')
     cy.wait(5000)
     cy.get('#FirstName').type('Artyre')
