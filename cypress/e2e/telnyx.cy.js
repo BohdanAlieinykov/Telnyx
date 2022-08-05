@@ -33,17 +33,11 @@ describe('Telnyx e2e test', () => {
     cy.get('div h1').should('be.visible').and('contain.text','Solutions for Your Business')
   })
 
-  it('User can join to storage waitlist', () => {
-    cy.get(':nth-child(1) > .sc-7b3980dc-6 > span').click({force:true})
-    cy.get('.sc-f97529d6-0.bjUuRN.sc-b74bae4-0[href="/products/storage"]').click({force:true})
-    cy.get('.sc-a7a16c36-9 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click({force:true})
-    cy.url().should('contain','storage#form')
-    cy.wait(8000)
-    cy.get('#FirstName.mktoField').type('Artyre')
-    cy.get('#LastName.mktoField').type('Pirojkov')
-    cy.get('#Email.mktoField').type('artyrchik@mail.com')
-    cy.get('[type="submit"].mktoButton').click({force:true})
-    cy.get('h1 span').should('contain','on the waitlist!')
+  it('User can saw offer message & [Claim reward] button by click Network>See our pricing', () => {
+    cy.get('.sc-7b3980dc-6 > .sc-f97529d6-0').click()
+    cy.get('.sc-181bec92-1 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click()
+    cy.get('.sc-6609610a-4 > div > span').should('contain.text','Sign up and your first $10 is on us.')
+    cy.get('.sc-6609610a-5 > .sc-5d3a275a-0 > .sc-5d3a275a-1').should('be.visible')
   })
 
   it('error message appears when user try to login with non-confirmed email', () => {
