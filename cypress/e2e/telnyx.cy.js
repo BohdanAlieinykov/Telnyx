@@ -42,7 +42,7 @@ describe('Telnyx e2e test', () => {
     cy.get('#FirstName').type('Artyre')
     cy.get('#LastName').type('Pirojkov')
     cy.get('#Email').type('artyrchik@mail.com')
-    cy.get('[type="submit"]').click()
+    cy.get('[type="submit"].mktoButton').click({force:true})
     cy.get('h1 span').should('contain','You\'re on the waitlist!')
   })
 
