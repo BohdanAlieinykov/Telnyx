@@ -34,8 +34,8 @@ describe('Telnyx e2e test', () => {
   })
 
   it('User can saw offer message & [Claim reward] button by click Network>See our pricing', () => {
-    cy.get('.sc-7b3980dc-6 > .sc-f97529d6-0').click()
-    cy.get('.sc-181bec92-1 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click()
+    cy.get('.sc-7b3980dc-6 > .sc-f97529d6-0').click({force:true})
+    cy.get('.sc-181bec92-1 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click({force:true})
     cy.get('.sc-6609610a-4 > div > span').should('contain.text','Sign up and your first $10 is on us.')
     cy.get('.sc-6609610a-5 > .sc-5d3a275a-0 > .sc-5d3a275a-1').should('be.visible')
   })
