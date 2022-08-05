@@ -38,7 +38,7 @@ describe('Telnyx e2e test', () => {
     cy.get('.sc-f97529d6-0.bjUuRN.sc-b74bae4-0[href="/products/storage"]').click({force:true})
     cy.get('.sc-a7a16c36-9 > .sc-5d3a275a-0 > .sc-5d3a275a-1').click()
     cy.url().should('contain','storage#form')
-    cy.wait(5000)
+    cy.wait(8000)
     cy.get('#FirstName').type('Artyre')
     cy.get('#LastName').type('Pirojkov')
     cy.get('#Email').type('artyrchik@mail.com')
