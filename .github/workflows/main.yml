@@ -1,5 +1,5 @@
 name: Cypress test
-on: [pull_request]
+on: [push]
 jobs:
  cypress-run:
     runs-on: ubuntu-latest
